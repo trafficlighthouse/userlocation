@@ -12,7 +12,7 @@ app.set('port',(process.env.PORT || 3000));
 
 app.get("/GetAddr", function (request, response) { 
   const requestOptions = {
-  url:'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + request.query.location + '&key=' + process.env.G_API_KEY,
+  url:'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + request.query.location + '&key=' + request.query.key,
   headers: {
  Accept: 'application/json'
  },
