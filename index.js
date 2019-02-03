@@ -6,6 +6,8 @@ const express = require('express');
 const app = express();
 const requestPromise = require('request-promise');
 
+app.set('port',(process.env.PORT || 3000));
+
 // Get the address of the longtitude and latitude passed
 
 app.get("/GetAddr", function (request, response) { 
@@ -136,6 +138,6 @@ function getState(addrComponents) {
   
 
 // listen for requests :)
-app.listen(3000, function() {
-  console.log('Your app is listening on port 3000');
+app.listen(app.get('port'), function() {
+  console.log('Your app is listening on port', app.get('port'));
 });
